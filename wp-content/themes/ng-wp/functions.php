@@ -86,13 +86,19 @@ function ng_wp_scripts() {
 	* AngularJS libs
 	*/
 	wp_enqueue_script(
-			'angularjs',
-			THEME_DIR_URI . '/bower_components/angular/angular.js'
-		);
+		'angularjs',
+		THEME_DIR_URI . '/lib/angular/angular.js'
+	);
 
 	wp_enqueue_script(
 		'angularjs-route',
-		THEME_DIR_URI . '/bower_components/angular-route/angular-route.js',
+		THEME_DIR_URI . '/lib/angular-route/angular-route.js',
+		array( 'angularjs' )
+	);
+
+	wp_enqueue_script(
+		'angular-sanitize',
+		THEME_DIR_URI . '/lib/angular-sanitize/angular-sanitize.js',
 		array( 'angularjs' )
 	);
 

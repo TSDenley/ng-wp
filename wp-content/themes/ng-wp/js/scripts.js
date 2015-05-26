@@ -1,6 +1,6 @@
 (function () {
 
-	angular.module('ng-wp', ['ngRoute'])
+	angular.module('ng-wp', ['ngRoute', 'ngSanitize'])
 
 		/*
 		* App config
@@ -19,7 +19,7 @@
 		* Main controller (home)
 		*/
 		.controller('MainCtrl', function ($scope, $http, $routeParams) {
-			$http.get('wp-json/wp/v2/posts').success(function (res) {
+			$http.get(appVars.siteURL + 'wp-json/wp/v2/posts').success(function (res) {
 				console.log(res);
 				$scope.posts = res;
 			});

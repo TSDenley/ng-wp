@@ -82,6 +82,9 @@ function ng_wp_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	/*
+	* AngularJS libs
+	*/
 	wp_enqueue_script(
 			'angularjs',
 			THEME_DIR_URI . '/bower_components/angular/angular.js'
@@ -93,6 +96,9 @@ function ng_wp_scripts() {
 		array( 'angularjs' )
 	);
 
+	/*
+	* Custom JS
+	*/
 	wp_enqueue_script(
 		'my-scripts',
 		THEME_DIR_URI . '/js/scripts.js',

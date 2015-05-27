@@ -30,6 +30,7 @@
 			.get(appVars.siteURL + appVars.APIprefix + 'posts')
 			.success(function (res) {
 				console.log('Main, get all posts: ', res);
+				document.querySelector('title').innerHTML = 'Home | ng-wp';
 				$scope.posts = res;
 			});
 	}]);
@@ -42,6 +43,7 @@
 			.get(appVars.siteURL + appVars.APIprefix + 'posts?filter[name]=' + $routeParams.slug)
 			.success(function (res) {
 				console.log('Single post: ', res);
+				document.querySelector('title').innerHTML = res[0].title + ' | ng-wp';
 				$scope.post = res[0];
 			});
 	}]);

@@ -4,6 +4,7 @@
 
 <div id="post-{{post.ID}}">
 	<article class="post">
+	<i>Posted on: {{ post.date_gmt | date:"d/M/yyyy 'at' H:mm" }}</i>
 		<div class="post-content" ng-bind-html="post.content"></div>
 	</article>
 </div><!-- #post-{{post.ID}} -->

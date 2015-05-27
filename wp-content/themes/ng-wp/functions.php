@@ -52,23 +52,6 @@ function ng_wp_setup() {
 endif; // ng_wp_setup
 add_action( 'after_setup_theme', 'ng_wp_setup' );
 
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-// function ng_wp_widgets_init() {
-// 	register_sidebar( array(
-// 		'name'          => esc_html__( 'Sidebar', 'ng-wp' ),
-// 		'id'            => 'sidebar-1',
-// 		'description'   => '',
-// 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-// 		'after_widget'  => '</aside>',
-// 		'before_title'  => '<h1 class="widget-title">',
-// 		'after_title'   => '</h1>',
-// 	) );
-// }
-// add_action( 'widgets_init', 'ng_wp_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -108,7 +91,7 @@ function ng_wp_scripts() {
 	wp_enqueue_script(
 		'my-scripts',
 		THEME_DIR_URI . '/js/scripts.js',
-		array( 'angularjs', 'angularjs-route' ),
+		array( 'angularjs', 'angularjs-route', 'angular-sanitize' ),
 		'20150526',
 		true
 	);
@@ -118,8 +101,9 @@ function ng_wp_scripts() {
 		'appVars',
 		array(
 			'siteURL' => esc_url( home_url('/') ),
+			'APIprefix' => 'wp-json/',
 			'partials' => THEME_DIR_URI . '/partials'
-			)
+		)
 	);
 }
 add_action( 'wp_enqueue_scripts', 'ng_wp_scripts' );

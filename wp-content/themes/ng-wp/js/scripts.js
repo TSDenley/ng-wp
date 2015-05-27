@@ -16,6 +16,9 @@
 			.when('/:slug', {
 				templateUrl: appVars.partials + '/content.html',
 				controller: 'ContentCtrl'
+			})
+			.otherwise({
+				redirectTo: appVars.siteURL
 			});
 	});
 

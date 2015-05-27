@@ -12,20 +12,36 @@
 			.when('/', {
 				templateUrl: appVars.partials + '/main.html',
 				controller: 'MainCtrl'
+			})
+			.when('/:slug', {
+				templateUrl: appVars.partials + '/content.html',
+				controller: 'ContentCtrl'
 			});
 	});
 
 	/*
-	* Main controller (home)
+	* Main controller (home - display all posts)
 	*/
-	app.controller('MainCtrl', function ($scope, $http, $routeParams) {
+	app.controller('MainCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 		$http
 			.get(appVars.siteURL + appVars.APIprefix + 'posts')
 			.success(function (res) {
 				console.log('Main, get all posts: ', res);
 				$scope.posts = res;
 			});
-	});
+	}]);
+
+	/*
+	* Content controller (single post)
+	*/
+	app.controller('ContentCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+		$http
+			.get(appVars.siteURL + appVars.APIprefix + 'posts?filter[name]=' + $routeParams.slug)
+			.success(function (res) {
+				console.log('Single post: ', res);
+				$scope.post = res[0];
+			});
+	}]);
 
 	/*
 	* Search form directive

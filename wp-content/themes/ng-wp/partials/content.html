@@ -1,0 +1,9 @@
+<!-- content.html -->
+
+<h1 ng-bind-html="post.title"></h1>
+
+<div id="post-{{post.ID}}">
+	<article class="post">
+		<div class="post-content" ng-bind-html="post.content"></div>
+	</article>
+</div><!-- #post-{{post.ID}} -->

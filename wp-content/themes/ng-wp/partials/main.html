@@ -1,10 +1,13 @@
+<!-- main.html -->
+
 <h1>All Posts</h1>
 
 <search-form></search-form>
 
 <div id="posts" ng-repeat="post in posts">
-	<article class="post">
-		<h1>{{post.title}}</h1>
+	<article id="post-{{post.ID}}" class="post">
+		<h1><a href="{{post.slug}}" ng-bind-html="post.title"></a></h1>
 		<div class="post-excerpt" ng-bind-html="post.excerpt"></div>
 	</article>
+	<hr>
 </div><!-- #posts -->

@@ -132,3 +132,12 @@ function ngwp_add_link_target ( $html ) {
 	return preg_replace( '/(<a.*")>/', '$1 target="_self">', $html);
 }
 add_filter( 'image_send_to_editor', 'ngwp_add_link_target' );
+
+
+/*
+* Remove WP body classes
+*/
+function my_class_names ( $classes ) {
+    return array();
+}
+add_filter( 'body_class', 'my_class_names' );

@@ -53,6 +53,15 @@ endif; // ng_wp_setup
 add_action( 'after_setup_theme', 'ng_wp_setup' );
 
 
+/*
+* Page URLs (prefix pages with 'page')
+*/
+function custom_page_rules() {
+	global $wp_rewrite;
+	$wp_rewrite->page_structure = $wp_rewrite->root . 'page/%pagename%';
+}
+add_action( 'init', 'custom_page_rules' );
+
 /**
  * Enqueue scripts and styles.
  */

@@ -112,11 +112,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -286,8 +281,18 @@ h6 {
 	clear: both;
 }
 
+/*h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}*/
+
 p {
-	margin-bottom: 1.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 dfn,
@@ -774,6 +779,16 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.post-title {
+	font: italic bold 64px serif;
+	margin-bottom: 10px;
+}
+
+	.post-title a {
+		text-decoration: none;
+		color: #333;
+	}
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -908,4 +923,9 @@ object {
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.site-footer {
+	margin-top: 100px;
+	margin-bottom: 60px;
 }

@@ -10,7 +10,7 @@
 		<h1 class="post-title h1"><a href="{{post.slug}}" ng-bind-html="post.title"></a></h1>
 
 		<div class="post-meta">
-			Posted on: <span class="posted-on"><i>{{ post.date_gmt | date:"d/M/yyyy 'at' H:mm" }}</i></span> by <span class="posted-by"><i>{{ post.author.nickname }}</i></span>
+			Posted on: <span class="posted-on">{{ post.date_gmt | date:"d/M/yyyy 'at' H:mm" }}</span> by <span class="posted-by">{{ post.author.nickname }}</span>
 		</div>
 
 		<div class="post-excerpt" ng-bind-html="post.excerpt"></div>

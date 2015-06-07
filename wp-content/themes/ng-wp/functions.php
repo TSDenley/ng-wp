@@ -107,3 +107,12 @@ function ng_wp_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'ng_wp_scripts' );
+
+
+/*
+* Filter to fix links to media files
+*/
+function ngwp_add_link_target ( $html ) {
+	return preg_replace( '/(<a.*")>/', '$1 target="_self"', $html);
+}
+add_filter( 'image_send_to_editor', 'ngwp_add_link_target' );

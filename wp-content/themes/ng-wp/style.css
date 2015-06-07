@@ -20,6 +20,8 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -48,7 +50,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -270,6 +271,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1,
@@ -279,16 +281,8 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-weight: lighter;
 }
-
-/*h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-	margin-top: 0;
-}*/
 
 p {
 	margin-top: 1em;
@@ -780,8 +774,9 @@ a:active {
 }
 
 .post-title {
-	font: italic bold 64px serif;
-	margin-bottom: 10px;
+	font-size: 52px;
+	font-style: italic;
+	margin-bottom: 5px;
 }
 
 	.post-title a {

@@ -43,7 +43,9 @@
 			.get(appVars.siteURL + appVars.APIprefix + 'posts?filter[name]=' + $routeParams.slug)
 			.success(function (res) {
 				console.log('Single post: ', res);
-				document.querySelector('title').innerHTML = res[0].title + ' | ng-wp';
+				var title = res[0].title ? res[0].title + ' | ng-wp' : 'ng-wp';
+
+				document.querySelector('title').innerHTML = title;
 				$scope.post = res[0];
 			});
 	}]);

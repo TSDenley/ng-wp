@@ -1,6 +1,6 @@
 (function () {
 
-	var app = angular.module('ng-wp', ['ngRoute', 'ngSanitize']);
+	var app = angular.module('ng-wp', ['ngRoute', 'ngSanitize', 'ngAnimate']);
 
 	/*
 	* App config

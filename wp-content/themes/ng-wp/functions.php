@@ -95,13 +95,19 @@ function ng_wp_scripts() {
 		array( 'angularjs' )
 	);
 
+	wp_enqueue_script(
+		'angular-animate',
+		THEME_DIR_URI . '/lib/angular-animate/angular-animate.js',
+		array( 'angularjs' )
+	);
+
 	/*
 	* Custom JS
 	*/
 	wp_enqueue_script(
 		'my-scripts',
 		THEME_DIR_URI . '/js/scripts.js',
-		array( 'angularjs', 'angularjs-route', 'angular-sanitize' ),
+		array( 'angularjs', 'angularjs-route', 'angular-sanitize', 'angular-animate' ),
 		'20150526',
 		true
 	);

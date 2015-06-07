@@ -14,7 +14,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main ng-view id="main" class="site-main" role="main">
+		<main ng-view id="main" class="site-main view-fade-in" role="main">
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -13,8 +13,12 @@
 				templateUrl: appVars.partials + '/main.html',
 				controller: 'MainCtrl'
 			})
+			.when('/category/:category', {
+				templateUrl: appVars.partials + '/main.html',
+				controller: 'CategoryCtrl'
+			})
 			.when('/page/:slug', {
-				templateUrl: appVars.partials + '/content.html',
+				templateUrl: appVars.partials + '/page.html',
 				controller: 'PageCtrl'
 			})
 			.when('/post/:slug', {
@@ -33,9 +37,24 @@
 		$http
 			.get(appVars.siteURL + appVars.APIprefix + 'posts')
 			.success(function (res) {
-				console.log('Main, get all posts: ', res);
+				console.log('All posts: ', res);
 				document.querySelector('title').innerHTML = 'Home | ng-wp';
 				$scope.posts = res;
+				$scope.isHome = true;
+			});
+	}]);
+
+	/*
+	* Categories
+	*/
+	app.controller('CategoryCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+		$http
+			.get(appVars.siteURL + appVars.APIprefix + 'posts?filter[category_name]=' + $routeParams.category)
+			.success(function (res) {
+				console.log('Cats: ', res);
+				document.querySelector('title').innerHTML = 'Category: ' + $routeParams.category + ' | ng-wp';
+				$scope.posts = res;
+				$scope.isHome = false;
 			});
 	}]);
 

@@ -13,9 +13,13 @@
 				templateUrl: appVars.partials + '/main.html',
 				controller: 'MainCtrl'
 			})
-			.when('/:slug', {
+			.when('/page/:slug', {
 				templateUrl: appVars.partials + '/content.html',
-				controller: 'ContentCtrl'
+				controller: 'PageCtrl'
+			})
+			.when('/post/:slug', {
+				templateUrl: appVars.partials + '/content.html',
+				controller: 'PostCtrl'
 			})
 			.otherwise({
 				redirectTo: appVars.siteURL
@@ -23,7 +27,7 @@
 	});
 
 	/*
-	* Main controller (home - display all posts)
+	* Posts controller
 	*/
 	app.controller('MainCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 		$http
@@ -36,16 +40,33 @@
 	}]);
 
 	/*
-	* Content controller (single post)
+	* Single post controller
 	*/
-	app.controller('ContentCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+	app.controller('PostCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 		$http
 			.get(appVars.siteURL + appVars.APIprefix + 'posts?filter[name]=' + $routeParams.slug)
 			.success(function (res) {
 				console.log('Single post: ', res);
-				var title = res[0].title ? res[0].title + ' | ng-wp' : 'ng-wp';
 
+				var title = res[0].title ? res[0].title + ' | ng-wp' : 'ng-wp';
 				document.querySelector('title').innerHTML = title;
+
+				$scope.post = res[0];
+			});
+	}]);
+
+	/*
+	* Page controller
+	*/
+	app.controller('PageCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+		$http
+			.get(appVars.siteURL + appVars.APIprefix + 'pages?filter[pagename]=' + $routeParams.slug)
+			.success(function (res) {
+				console.log('Page: ', res);
+
+				var title = res[0].title ? res[0].title + ' | ng-wp' : 'ng-wp';
+				document.querySelector('title').innerHTML = title;
+
 				$scope.post = res[0];
 			});
 	}]);

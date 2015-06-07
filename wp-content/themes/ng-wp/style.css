@@ -544,12 +544,14 @@ a:active {
 	text-decoration: none;
 	padding: 5px 10px;
 	background-color: #eee;
+	color: #333;
 }
 
 	.main-navigation a:hover,
 	.main-navigation a:active,
 	.main-navigation a:focus {
 		background-color: #ddd;
+		color: #000;
 	}
 
 .main-navigation ul ul {

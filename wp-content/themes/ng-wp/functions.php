@@ -62,6 +62,7 @@ function custom_page_rules() {
 }
 add_action( 'init', 'custom_page_rules' );
 
+
 /**
  * Enqueue scripts and styles.
  */

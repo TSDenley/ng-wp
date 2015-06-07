@@ -499,7 +499,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	color: RebeccaPurple;
 }
 
 a:hover,
@@ -542,7 +542,15 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 5px 10px;
+	background-color: #eee;
 }
+
+	.main-navigation a:hover,
+	.main-navigation a:active,
+	.main-navigation a:focus {
+		background-color: #ddd;
+	}
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);

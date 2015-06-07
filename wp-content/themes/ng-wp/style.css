@@ -284,6 +284,15 @@ h6 {
 	font-weight: lighter;
 }
 
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
 p {
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -744,6 +753,10 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.posts .post {
+	margin-bottom: 40px;
+}
+
 .sticky {
 	display: block;
 }
@@ -920,10 +933,19 @@ object {
 	margin-right: auto;
 }
 
+.site-header {
+	margin-bottom: 40px;
+}
+
 .site-footer {
 	margin-top: 100px;
 	margin-bottom: 60px;
 }
+
+.search-form {
+	margin-bottom: 40px;
+}
+
 
 /*
 * =Animation
@@ -936,15 +958,19 @@ object {
 
 	opacity: 0;
 }
+
 .view-fade-in.ng-enter {
 	opacity: 0;
 }
+
 .view-fade-in.ng-enter.ng-enter-active {
 	opacity: 1;
 }
+
 .view-fade-in.ng-leave.ng-leave-active {
 	opacity: 1;
 }
+
 .view-fade-in.ng-leave {
 	opacity: 0;
 }

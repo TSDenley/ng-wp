@@ -77,7 +77,7 @@
 	app.directive('searchForm', function () {
 		return {
 			restrict: 'EA',
-			template: '<input type="search" name="s" placeholder="Search" ng-model="filter.s" ng-change="search()">',
+			template: '<input type="search" class="search-form" name="s" placeholder="Search" ng-model="filter.s" ng-change="search()">',
 			controller: function ( $scope, $http ) {
 				$scope.filter = {
 					s: ''
